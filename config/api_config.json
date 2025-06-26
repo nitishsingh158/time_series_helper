@@ -1,0 +1,63 @@
+{
+    "base_url": "http://localhost:8000",
+    "endpoints": {
+        "scan": {
+            "name": "scan",
+            "description": "Retrieves the list of all available assets/machines/sensors. Use this function when the user asks about available assets or wants to see what data sources are available.",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            },
+            "path": "/scan",
+            "method": "GET"
+        },
+        "timeseries": {
+            "name": "timeseries",
+            "description": "Retrieves time series data for a specific asset. Use this function when the user asks for data from a specific asset or wants to analyze time series data.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "asset_key": {
+                        "type": "string",
+                        "description": "The unique identifier key for the asset to get data for, e.g., 'ABC123' or 'XYZ789'."
+                    },
+                    "start_date": {
+                        "type": "integer",
+                        "description": "Start timestamp (Unix timestamp). Optional - defaults to 3 months ago if not provided."
+                    },
+                    "end_date": {
+                        "type": "integer",
+                        "description": "End timestamp (Unix timestamp). Optional - defaults to current time if not provided."
+                    },
+                    "time_interval": {
+                        "type": "integer",
+                        "description": "Time interval in minutes. Currently only 5-minute intervals are supported."
+                    }
+                },
+                "required": ["asset_key"]
+            },
+            "path": "/timeseries",
+            "method": "GET"
+        },
+        "lastvalue": {
+            "name": "lastvalue",
+            "description": "Retrieves the most recent data point for a specific asset. Use this function when the user asks for current values or the latest readings from an asset.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "asset_key": {
+                        "type": "string",
+                        "description": "The unique identifier key for the asset to get the last value for, e.g., 'ABC123' or 'XYZ789'."
+                    }
+                },
+                "required": ["asset_key"]
+            },
+            "path": "/lastvalue",
+            "method": "GET"
+        }
+    },
+    "defaults": {
+        "time_window_hours": 24
+    }
+}
