@@ -1,10 +1,9 @@
 # Graph-based Chat Agent with Supervisor Pattern
-# Path: ai_time_series_assistant/agents/chat_agent.py
 # Purpose:GraphChatAgent should focus on understanding user intent and preparing
 # clear requests for the analytics agent, not doing the actual analytics.
 
 from typing import Dict, Any, List, Optional
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI as ChatLLM
 from langchain.memory import ConversationBufferMemory
 from langgraph.graph import StateGraph, END
 import logging
@@ -34,7 +33,7 @@ class GraphChatAgent:
         """
         # Extract pre-initialized components from factory
         self.config = config
-        self.llm: ChatGoogleGenerativeAI = config["llm"]
+        self.llm: ChatLLM = config["llm"]
         self.memory: ConversationBufferMemory = config["memory"]
 
         # Graph components

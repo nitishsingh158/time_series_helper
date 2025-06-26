@@ -1,5 +1,4 @@
 # Chat interface components for Streamlit
-# Path: ai_time_series_assistant/frontend/components/chat_interface.py
 # Purpose:
 # UI components for the chat
 # Message routing to agents

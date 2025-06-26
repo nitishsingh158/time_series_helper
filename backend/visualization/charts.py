@@ -1,5 +1,4 @@
 # Chart visualization module
-# Path: ai_time_series_assistant/backend/visualization/charts.py
 
 import pandas as pd
 import matplotlib.pyplot as plt

@@ -1,5 +1,4 @@
 # Data preprocessing module
-# Path: ai_time_series_assistant/backend/data/preprocessor.py
 
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import MinMaxScaler

@@ -1,6 +1,5 @@
 # app.py
 # Main entry point for the AI Time Series Assistant application
-# Path: ai_time_series_assistant/app.py
 
 import streamlit as st
 from frontend.streamlit_app import create_streamlit_app

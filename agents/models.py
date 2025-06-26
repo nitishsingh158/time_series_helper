@@ -1,6 +1,5 @@
 """
 Pydantic models for the Graph Chat Agent
-Path: ai_time_series_assistant/agents/models.py
 """
 
 from typing import Dict, Any, List, Optional, Literal

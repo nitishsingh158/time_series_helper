@@ -1,6 +1,5 @@
 """
 Data access utilities for the Graph Chat Agent
-Path: ai_time_series_assistant/agents/data_utils.py
 """
 
 import logging

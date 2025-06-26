@@ -1,5 +1,4 @@
 # Basic statistics module - Simplified pseudocode
-# Path: ai_time_series_assistant/backend/analysis/basic_statistics.py
 
 import pandas as pd
 from typing import Dict

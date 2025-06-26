@@ -1,5 +1,4 @@
 # Data loading module - Simplified for API-only access
-# Path: ai_time_series_assistant/backend/data/loader.py
 
 import pandas as pd
 from typing import Dict, Any

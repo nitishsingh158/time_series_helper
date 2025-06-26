@@ -1,5 +1,4 @@
 # Anomaly detection module - Simplified pseudocode
-# Path: ai_time_series_assistant/backend/analysis/anomaly_detection.py
 
 import pandas as pd
 from typing import Dict, Any

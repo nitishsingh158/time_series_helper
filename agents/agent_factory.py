@@ -1,8 +1,7 @@
 # Agent factory module - Improved Version
-# Path: ai_time_series_assistant/agents/agent_factory.py
 
 from typing import Dict, Any, Optional
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI as ChatLLM
 from langchain.memory import ConversationBufferMemory
 from .chat_agent import GraphChatAgent
 import os
@@ -47,31 +46,31 @@ class AgentFactory:
             logger.error(f"Failed to initialize AgentFactory: {e}")
             raise
 
-    def _create_llm(self) -> ChatGoogleGenerativeAI:
+    def _create_llm(self) -> ChatLLM:
         """
         Initialize the LLM with configuration
 
         Returns:
-            ChatGoogleGenerativeAI: Configured LLM instance
+            ChatLLM: Configured LLM instance
         """
         # Get API key from environment
-        api_key = os.getenv("GOOGLE_API_KEY")
+        api_key = os.getenv("LLM_API_KEY") or os.getenv("GOOGLE_API_KEY")
         if not api_key:
             raise ValueError(
-                "GOOGLE_API_KEY environment variable is required. "
+                "LLM_API_KEY environment variable is required. "
                 "Please set it in your environment or .env file."
             )
 
         # Create LLM with configuration
         llm_config = {
-            "model": self.config.get("model_name", "gemini-2.5-flash-lite"),
+            "model": self.config.get("model_name", "default-model"),
             "temperature": self.config.get("temperature", 0.0),
             "max_tokens": self.config.get("max_tokens", 2000),
-            "google_api_key": api_key,
+            "google_api_key": api_key,  # Keep original param name for compatibility
         }
 
         try:
-            llm = ChatGoogleGenerativeAI(**llm_config)
+            llm = ChatLLM(**llm_config)
             logger.info(f"LLM initialized with model: {llm_config['model']}")
             return llm
 

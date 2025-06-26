@@ -1,5 +1,4 @@
 # Visualization components for Streamlit
-# Path: ai_time_series_assistant/frontend/components/visualization.py
 
 import streamlit as st
 import pandas as pd

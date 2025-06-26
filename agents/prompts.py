@@ -1,6 +1,5 @@
 """
 Prompt templates for the Graph Chat Agent
-Path: ai_time_series_assistant/agents/prompts.py
 """
 
 

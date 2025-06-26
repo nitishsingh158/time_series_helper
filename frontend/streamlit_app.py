@@ -1,5 +1,4 @@
 # Main Streamlit application - Simplified for API-only access
-# Path: ai_time_series_assistant/frontend/streamlit_app.py
 
 import streamlit as st
 from typing import Dict, Any

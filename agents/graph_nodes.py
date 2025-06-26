@@ -1,6 +1,5 @@
 """
 Graph node implementations for the Graph Chat Agent
-Path: ai_time_series_assistant/agents/graph_nodes.py
 """
 
 import logging

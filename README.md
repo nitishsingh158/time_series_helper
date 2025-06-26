@@ -152,7 +152,8 @@ Time Series Analysis Capabilities:
    ```
    
    Required environment variables in `.env`:
-   - `GOOGLE_API_KEY`: Your Google Gemini API key
+   - `LLM_API_KEY`: Your LLM provider API key (primary)
+   - `GOOGLE_API_KEY`: Your Google Gemini API key (fallback compatibility)
    - `LANGSMITH_API_KEY`: Your LangSmith API key (optional, for tracing)
    - `OPENAI_API_KEY`: Your OpenAI API key (if using OpenAI models)
 
